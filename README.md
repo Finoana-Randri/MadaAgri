@@ -1,61 +1,98 @@
 # MadaAgri Market
 
-Application web locale pour le marché de produits agricoles malgaches.
+A local marketplace connecting buyers with Malagasy agricultural producers.
 
-L’interface est en **React 19 + Tailwind CSS 4** (dossier `frontend/`, outillage Vite). Le serveur Python (`server.py`) fournit l’API JSON sous `/api`, les photos sous `/assets` et sert l’interface compilée.
+The web interface is currently in French; this project guide and feature overview are in English.
 
-## Lancer l’application
+## Screenshots
 
-Il faut Python 3 et Node.js 20 ou plus. Compiler l’interface une première fois, puis après chaque modification du dossier `frontend/` :
+<table>
+  <tr>
+    <th>Desktop (1440 × 960)</th>
+    <th>Mobile (480 × 950)</th>
+  </tr>
+  <tr>
+    <td><img src="assets/screenshots/desktop.png" alt="MadaAgri product detail page on desktop" width="720"></td>
+    <td><img src="assets/screenshots/mobile.png" alt="MadaAgri product detail page on a mobile screen" width="240"></td>
+  </tr>
+</table>
 
-    cd frontend
-    npm install
-    npm run build
-    cd ..
+## Features
 
-Puis lancer le serveur depuis ce dossier :
+- Responsive marketplace with product search, category filters, sorting, product details, and producer information.
+- Buyer and producer accounts, six-digit phone verification, shopping cart, order requests, order tracking, and notifications.
+- Delivery workflow: producers propose delivery fees; buyers accept or decline; orders then move through preparation, delivery, and handover.
+- Producer dashboard for recent orders and product management, including stock updates, photo uploads, edits, and product deactivation.
+- Product photos support PNG, JPEG, and WebP files up to 2 MB.
+- Administration tools for account verification and suspension, categories, units, delivery areas and fees, product moderation, complaints, and CSV export.
+- Buyer reviews and complaints after delivery.
+- Separate order and payment statuses, manual payment confirmation with a receipt reference, and a history of decisions.
 
-    python server.py --demo
+## Requirements
 
-Puis ouvrir http://127.0.0.1:8000. Pour choisir un autre port :
+- Python 3
+- Node.js 20 or later
 
-    python server.py --demo --port 8765
+## Run locally
 
-Le mode démo crée ces comptes locaux :
+Build the frontend, then start the Python server:
 
-- Acheteur : acheteur@madaagri.test / acheteur123
-- Producteur : producteur@madaagri.test / producteur123
-- Coopérative : coop@madaagri.test / coop12345
-- Productrice : lalao@madaagri.test / lalao12345
-- Ferme Soa : soa@madaagri.test / fermesoa123
-- Administration : admin@madaagri.test / admin123
+```bash
+cd frontend
+npm install
+npm run build
+cd ..
+python server.py --demo
+```
 
-Il ajoute aussi, une seule fois, trois fiches produits et trois comptes producteurs en attente de vérification, pour que le back-office ait des éléments à traiter.
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-Pour développer l’interface avec rechargement instantané, laisser le serveur Python tourner sur le port 8765 et lancer dans un second terminal `npm run dev` depuis `frontend/`, puis ouvrir http://localhost:5173 (les appels `/api` et `/assets` sont relayés vers le port 8765).
+Demo accounts:
 
-Les données sont conservées dans madaagri.sqlite3, dans ce dossier. Les comptes créés depuis l’application sont enregistrés localement.
+- Buyer: `acheteur@madaagri.test` / `acheteur123`
+- Producer: `producteur@madaagri.test` / `producteur123`
+- Cooperative: `coop@madaagri.test` / `coop12345`
+- Producer: `lalao@madaagri.test` / `lalao12345`
+- Farm: `soa@madaagri.test` / `fermesoa123`
+- Administrator: `admin@madaagri.test` / `admin123`
 
-## Fonctions incluses
+Demo mode also seeds three products and three producer accounts awaiting verification, so the administration area has sample records to review.
 
-- Catalogue responsive avec recherche, filtres, tri et fiches produits illustrées.
-- Comptes acheteur et producteur, vérification du numéro de téléphone par code à 6 chiffres (écran 05), panier, demande de commande, suivi et notifications.
-- Cycle de livraison complet depuis le suivi de commande : le producteur propose les frais, l’acheteur les accepte ou refuse, puis préparation, départ en livraison et remise.
-- Espace producteur (tableau de bord, commandes récentes, fiches ajoutées ou modifiées dans une fenêtre dédiée).
-- Ajout de photos PNG, JPEG ou WebP (2 Mo maximum), correction du stock, modification et désactivation des produits.
-- Administration des profils (validation, suspension, recherche), des catégories, unités, zones et frais, avec modération des fiches produits, réclamations et export CSV.
-- Avis et réclamations après livraison.
-- Statuts de commande et de paiement séparés, confirmation manuelle du paiement avec référence de reçu, et historique des décisions.
+## Frontend development
 
-## Vérifier
+Run the Python server on port 8765 in one terminal:
 
-    python -m unittest discover -s tests -v
-    npm --prefix frontend run build
+```bash
+python server.py --demo --port 8765
+```
 
-Les 16 écrans suivent les planches de `figma-import/` (1440 × 960 et 390 × 844), avec une URL par écran : `/`, `/connexion`, `/inscription`, `/mot-de-passe`, `/verification`, `/produit/:id`, `/panier`, `/livraison`, `/paiement`, `/confirmation/:id`, `/commandes/:id`, `/commandes`, `/producteur`, `/admin`, `/admin/commandes`, `/admin/catalogue`, `/admin/parametres`. Les couleurs et points de rupture de la maquette sont dans `frontend/src/index.css` (thème Tailwind) ; les écrans sont dans `frontend/src/pages/`.
+In a second terminal, start Vite:
 
-Le serveur ne publie que l’interface compilée et le dossier `assets/` : la base SQLite et le code source ne sont pas accessibles par le navigateur. L’ancienne interface sans framework est conservée dans `legacy-vanilla/` pour référence ; elle n’est plus servie.
+```bash
+cd frontend
+npm run dev
+```
 
-Les tests HTTP utilisent une base SQLite temporaire. La démonstration sur `http://127.0.0.1:8765/` est actuellement démarrée sur ce poste.
+Open [http://localhost:5173](http://localhost:5173). Vite proxies `/api` and `/assets` requests to the Python server on port 8765.
 
-Le paiement en ligne, les SMS, l’envoi d’e-mails et les frais de livraison automatiques ne sont pas configurés. Une commande est une demande au producteur ; aucun montant n’est débité sur le site. Les frais éventuels et le montant final sont confirmés avant l’engagement définitif. Le code de réinitialisation du mot de passe et le code de vérification du téléphone sont affichés uniquement en mode démo ; hors démo, ces envois renvoient une erreur tant qu’aucun prestataire e-mail/SMS n’est configuré. Avant une exploitation publique, il faut configurer HTTPS, les courriels, les conditions d’utilisation, la confidentialité, les modalités de livraison et les accords avec les prestataires de paiement.
+## Main routes
+
+`/`, `/connexion`, `/inscription`, `/mot-de-passe`, `/verification`, `/produit/:id`, `/panier`, `/livraison`, `/paiement`, `/confirmation/:id`, `/commandes/:id`, `/commandes`, `/producteur`, `/admin`, `/admin/commandes`, `/admin/catalogue`, and `/admin/parametres`.
+
+The interface follows the design boards in `figma-import/` (1440 × 960 desktop and 390 × 844 mobile). Theme colors and breakpoints are defined in `frontend/src/index.css`; page components are in `frontend/src/pages/`.
+
+## Data and limitations
+
+- Local data is stored in `madaagri.sqlite3`. Accounts created in the app remain on this machine.
+- The server exposes the built frontend and `assets/`; the SQLite database and source code are not available to the browser.
+- The older framework-free interface is kept in `legacy-vanilla/` for reference and is no longer served.
+- Online payments, SMS, email, and automatic delivery-fee calculation are not configured. An order is a request to the producer; the site does not charge a payment. Delivery fees and the final amount are confirmed before the order is finalized.
+- Password-reset and phone-verification codes are displayed only in demo mode. Outside demo mode, those flows require an email or SMS provider.
+- Before public deployment, configure HTTPS, email, privacy and terms pages, delivery policies, and payment providers.
+
+## Verify
+
+```bash
+npm --prefix frontend run build
+python -m unittest discover -s tests -v
+```
