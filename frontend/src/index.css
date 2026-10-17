@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/InterVariable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* Design tokens taken from the 1440 × 960 and 390 × 844 Figma boards. */
+@theme {
+  --font-sans: "Inter", "Segoe UI", Arial, sans-serif;
+  --color-forest: #214b37;
+  --color-forest-2: #315f46;
+  --color-forest-deep: #173d2f;
+  --color-leaf: #e8efdf;
+  --color-cream: #f7f6ef;
+  --color-paper: #fffefa;
+  --color-ink: #1d2921;
+  --color-muted: #778078;
+  --color-line: #e6e8df;
+  --color-soft: #f0f2e9;
+  --color-orange: #df7444;
+  --color-warm: #fbf1df;
+  --color-warm-ink: #a76a22;
+  --color-mist: #dce8d2;
+  --breakpoint-md: 40.6875rem; /* 651px: tablet */
+  --breakpoint-lg: 56.3125rem; /* 901px: desktop board */
+  --breakpoint-xl: 85.0625rem; /* 1361px: full 1440 board */
+  --shadow-pop: 0 14px 42px #18392b1f;
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-cream font-sans text-ink antialiased; }
+  button { cursor: pointer; }
+  button:disabled { cursor: not-allowed; opacity: .55; }
+  input, select, textarea, button { font: inherit; }
+  :focus-visible { outline: 2px solid var(--color-forest); outline-offset: 2px; }
+}
+
+@utility page { @apply mx-auto w-[calc(100%-28px)] pt-[15px] pb-24 lg:w-[min(1296px,91vw)] lg:pt-[22px] lg:pb-16; }
+@utility page-label { @apply mx-2 mb-3 block text-[13px] leading-4 font-[750] text-ink lg:mx-0; }
+@utility card { @apply rounded-2xl border border-line bg-paper; }
+@utility field-label { @apply mb-1.5 block text-[10px] leading-3 font-bold text-ink; }
+@utility input { @apply block h-[43px] w-full rounded-[10px] border border-line bg-paper px-[13px] text-[11px] text-ink placeholder:text-muted/80 focus:border-forest focus:outline-none; }
+@utility btn { @apply inline-flex items-center justify-center gap-2.5 rounded-xl font-bold transition-colors disabled:pointer-events-none; }
+@utility btn-primary { @apply btn bg-forest text-white hover:bg-forest-2; }
+@utility btn-soft { @apply btn bg-leaf text-forest hover:bg-[#dfe8d3]; }
+@utility btn-outline { @apply btn border border-line bg-paper text-forest hover:border-forest/40; }
+@utility link { @apply text-[9px] font-bold text-forest hover:underline; }

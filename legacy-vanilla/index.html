@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#193e31">
+  <meta name="description" content="MadaAgri Market — produits frais directement des producteurs malgaches.">
+  <title>MadaAgri Market — Le marché de nos régions</title>
+  <link rel="preload" as="image" href="/assets/product-photos/hero-marche.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="/app.css">
+  <link rel="stylesheet" href="/figma-alignment.css">
+  <link rel="stylesheet" href="/screens-alignment.css">
+  <link rel="stylesheet" href="/screens-flow.css">
+  <script src="/app.js?v=20261015-flow" defer></script>
+</head>
+<body>
+  <div class="announcement"><span>🌿</span> Des produits frais, directement des producteurs malgaches <span class="announcement-meta">Antananarivo · Français</span></div>
+  <header class="topbar">
+    <a class="brand" href="/" data-nav="home" aria-label="MadaAgri accueil">
+      <span class="brand-mark">M<span>✳</span></span><span class="brand-copy">MadaAgri<small><span class="desktop-copy">LE MARCHÉ DE NOS TERROIRS</span><span class="mobile-copy">MARCHÉ LOCAL</span></small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      <a href="#marche" data-nav="home" class="nav-link active">Marché</a>
+      <a href="#producteur" data-nav="producer" class="nav-link">Producteurs</a>
+      <a href="#comment-ca-marche" data-action="how-it-works" class="nav-link">Comment ça marche</a>
+    </nav>
+    <div class="top-actions">
+      <label class="header-search"><span aria-hidden="true">⌕</span><input id="header-search-input" placeholder="Rechercher tomates, riz, brèdes…" aria-label="Rechercher des produits"></label>
+      <button class="icon-button search-trigger" aria-label="Rechercher" data-action="focus-search">⌕</button>
+      <button class="icon-button favorite-trigger" aria-label="Favoris" data-action="favorites">♡</button>
+      <button class="cart-trigger" data-action="cart"><span>Panier</span><b id="cart-count">0</b></button>
+      <button class="icon-button account-trigger" data-action="account" aria-label="Compte">FR</button>
+      <button class="menu-button" data-action="menu" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </header>
+  <main id="app" aria-live="polite"><div class="loading"><span class="loader"></span> Préparation du marché…</div></main>
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div><a class="brand footer-brand" href="/" data-nav="home"><span class="brand-mark">M<span>✳</span></span><span class="brand-copy">MadaAgri<small>MARCHÉ LOCAL</small></span></a><p>Une rencontre plus juste entre les producteurs malgaches et celles et ceux qui aiment bien manger.</p></div>
+      <div><b>Explorer</b><a href="#marche" data-nav="home">Le marché</a><a href="#commandes" data-nav="orders">Mes commandes</a><a href="#producteur" data-nav="producer">Vendre sur MadaAgri</a></div>
+      <div><b>Notre promesse</b><span>Produits de saison</span><span>Prix affichés clairement</span><span>Producteurs vérifiés</span></div>
+      <div class="footer-note"><span class="leaf">✳</span><b>Le goût du vrai.</b><span>De nos terres à votre table.</span></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 MadaAgri Market</span><span>Un marché qui fait grandir nos régions.</span><button data-action="login">Connexion</button></div>
+  </footer>
+  <div id="toast" class="toast" role="status"></div>
+  <div id="modal-root"></div>
+</body>
+</html>

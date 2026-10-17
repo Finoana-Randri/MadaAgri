@@ -1,0 +1,212 @@
+/* Secondary screens follow the 1440 × 960 and 390 × 844 Figma boards. */
+.producer-row-actions{display:flex;gap:14px;margin-top:8px}
+.producer-row-actions .text-button{font-size:10px}
+.claim-row{align-items:flex-start}
+.claim-row .row-actions{align-self:center;flex-wrap:wrap}
+.claim-row textarea{display:block;width:min(100%,500px);min-height:56px;margin-top:9px;padding:9px 11px;border:1px solid #e6e8df;border-radius:8px;background:#fffefa;font:11px Inter,"Segoe UI",sans-serif;resize:vertical}
+.photo-upload{display:block;width:100%;margin-top:8px;padding:9px;border:1px dashed #b8cabb;border-radius:8px;background:#f8faf5;font:11px Inter,"Segoe UI",sans-serif}
+#product-form .field>small{display:block;margin-top:5px;color:#778078;font-size:9px}
+@media(max-width:650px){.producer-row-actions{gap:9px;margin-top:6px}.producer-row-actions .text-button{font-size:8px}.claim-row{display:block}.claim-row .row-actions{margin-top:8px}.claim-row textarea{font-size:9px}.photo-upload{font-size:8px}}
+@media(min-width:901px){
+  .admin-list-page{position:relative;height:848px;min-height:848px;padding:0}
+  .admin-list-page>.page-label{position:absolute;top:22px;left:0;margin:0;font-size:13px}
+  .admin-list-page>.page-head{position:absolute;top:50px;left:0;right:0;margin:0}
+  .admin-list-page .page-head h1{margin:0;font:800 29px/36px Inter,"Segoe UI",sans-serif;color:#1d2921}
+  .admin-list-page .page-head p{margin:5px 0 0;font-size:11px;color:#778078}
+  .admin-orders-page>.dashboard-grid{position:absolute;top:138px;left:0;right:24px;display:grid;grid-template-columns:repeat(3,406px);gap:27px;margin:0}
+  .admin-orders-page .metric{width:406px;height:85px;padding:20px;border:1px solid #e6e8df;border-radius:16px;background:#fffefa}
+  .admin-orders-page .metric span{font-size:10px;color:#778078}
+  .admin-orders-page .metric b{display:block;margin:13px 0 0;font-size:22px;color:#214b37}
+  .admin-orders-page .admin-list-filters{display:none}
+  .admin-orders-page .admin-list-panel{position:absolute;top:251px;left:0;width:1296px;min-height:472px;padding:0;border:1px solid #e6e8df;border-radius:16px;background:#fffefa}
+  .admin-list-panel .panel-title{position:absolute;top:26px;left:25px;margin:0;font:750 15px/20px Inter,"Segoe UI",sans-serif;color:#1d2921}
+  .admin-count{position:absolute;top:15px;right:33px;padding:7px 16px;border-radius:14px;background:#e8efdf;color:#214b37;font-size:10px;font-weight:700}
+  .admin-orders-page .admin-table-head{position:absolute;top:79px;left:25px;right:33px;display:grid;grid-template-columns:162px 215px 150px 165px 190px 1fr;gap:0;font-size:8px;font-weight:750;letter-spacing:.5px;color:#778078}
+  .admin-orders-page .admin-list-rows{position:absolute;top:100px;left:25px;right:33px}
+  .admin-order-row{height:75px;display:grid;grid-template-columns:162px 215px 150px 165px 190px 1fr 70px;align-items:center;border-bottom:1px solid #e6e8df;font-size:9px}
+  .admin-order-row .order-ref{color:#214b37}.admin-order-row .order-buyer{font-weight:600;color:#1d2921}.admin-order-row .order-date,.admin-order-row .order-payment{font-size:8px;color:#778078}.admin-order-row .order-amount{color:#1d2921}
+  .admin-order-row .status{width:max-content;min-width:117px;height:27px;display:grid;place-items:center;border-radius:14px;font-size:10px}
+  .admin-order-row .order-open{justify-self:end;font-size:9px}.admin-order-row .order-count{display:none}
+  .admin-list-note{position:absolute;bottom:23px;left:25px;margin:0;font-size:9px;color:#778078}
+  .admin-catalog-page>.catalog-add{position:absolute;top:58px;right:0;width:191px;height:43px;border-radius:12px;font-size:10px}
+  .admin-catalog-page .admin-list-filters{position:absolute;top:132px;left:0;display:flex;gap:10px}
+  .admin-filter{height:27px;padding:0 16px;border:0;border-radius:14px;background:#e8efdf;color:#214b37;font-size:10px;font-weight:700}
+  .admin-filter.active{background:#214b37;color:#fff}
+  .admin-catalog-page .admin-list-panel{position:absolute;top:177px;left:0;width:1296px;min-height:520px;padding:0;border:1px solid #e6e8df;border-radius:16px;background:#fffefa}
+  .admin-catalog-page .admin-table-head{position:absolute;top:80px;left:25px;right:35px;display:grid;grid-template-columns:307px 295px 150px 150px 1fr;font-size:8px;font-weight:750;letter-spacing:.5px;color:#778078}
+  .admin-catalog-page .admin-list-rows{position:absolute;top:101px;left:25px;right:35px}
+  .admin-catalog-row{height:93px;display:grid;grid-template-columns:72px 235px 295px 150px 150px 1fr 100px;align-items:start;padding:7px 0;border-bottom:1px solid #e6e8df;font-size:9px}
+  .admin-catalog-row img{width:56px;height:56px;border-radius:9px;object-fit:fill}
+  .admin-catalog-row .catalog-name,.admin-catalog-row .catalog-producer,.admin-catalog-row .catalog-price,.admin-catalog-row .catalog-stock,.admin-catalog-row .status,.admin-catalog-row .catalog-actions{margin-top:14px}
+  .admin-catalog-row .catalog-name{color:#1d2921}.admin-catalog-row .catalog-producer{color:#778078}.admin-catalog-row .catalog-price{color:#1d2921}.admin-catalog-row .catalog-stock{color:#1d2921}
+  .admin-catalog-row .status{width:max-content;min-width:105px;height:27px;display:grid;place-items:center;border-radius:14px;font-size:10px}
+  .catalog-actions{display:flex;flex-direction:column;align-items:flex-end;gap:5px}.catalog-actions .text-button{font-size:8px}
+  .catalog-notice{position:absolute;top:715px;left:0;width:1296px;height:40px;padding:13px 20px;border-radius:11px;background:#f0f2e9;color:#214b37;font-size:9px}
+  .auth-recovery .auth-aside .kicker{color:#deead4}
+  .auth-recovery .auth-aside h2{font-size:38px;line-height:45px;margin:48px 0 36px}
+  .auth-recovery .auth-aside p{font-size:12px;line-height:23px;max-width:430px}
+  .recovery-panel{position:relative;width:617px;height:710px;padding:0}
+  .recovery-panel .recovery-icon{display:none}
+  .recovery-panel h1{position:absolute;top:69px;left:49px;margin:0;font:800 25px/31px Inter,"Segoe UI",sans-serif;color:#1d2921}
+  .recovery-panel>p{position:absolute;top:112px;left:49px;right:51px;margin:0;font-size:10px;line-height:16px;color:#778078}
+  .recovery-panel #reset-request-form{display:contents}
+  .recovery-panel #reset-request-form .field{position:absolute;top:146px;left:49px;right:51px;margin:0;gap:0}
+  .recovery-panel .field label{display:block;margin:0 0 6px;font-size:10px;line-height:13px}
+  .recovery-panel .field input{display:block;width:100%;height:43px;min-height:43px;margin:0;padding:0 13px;border-radius:10px;font-size:11px}
+  .recovery-panel #reset-request-form .button{position:absolute;top:240px;left:49px;width:515px;height:49px;min-height:49px;border-radius:12px;font-size:13px}
+  .recovery-panel .recovery-info{position:absolute;top:318px;left:49px;width:515px;height:88px;padding:22px 20px;background:#f0f2e9;border-radius:13px}
+  .recovery-panel .recovery-info b,.recovery-panel .recovery-info small{display:block;font-size:10px;color:#214b37}
+  .recovery-panel .recovery-info small{margin-top:16px;font-size:9px;color:#778078}
+  .recovery-panel .auth-switch{position:absolute;top:450px;left:49px;right:51px;margin:0;font-size:11px}
+  .recovery-panel .auth-switch .text-button{font-size:11px}
+  .recovery-panel.has-reset-code{height:710px}
+  .product-page{position:relative;min-height:800px;padding-top:89px}
+  .product-page>.page-label{position:absolute;top:22px;left:0;margin:0;font-size:13px}
+  .product-page>.back-link{position:absolute;top:53px;left:0;margin:0;padding:0;border:0;background:transparent;font-size:10px;color:#778078}
+  .product-detail-grid{grid-template-columns:625px 620px;gap:51px;align-items:start}
+  .product-gallery{position:relative;width:625px}
+  .product-main-image{width:625px;height:500px;object-fit:fill;border-radius:19px}
+  .product-harvest-badge{position:absolute;top:17px;left:18px;height:27px;min-width:137px;display:grid;place-items:center;border-radius:14px;background:#fffefa;color:#214b37;font-size:10px;font-weight:700}
+  .product-thumbnails{gap:12px;margin-top:13px}
+  .product-thumbnails img{width:81px;height:66px;object-fit:fill;border-radius:10px}
+  .product-detail{position:relative;width:620px;height:579px;padding:0;border:1px solid #e6e8df;border-radius:16px;background:#fffefa}
+  .product-detail .product-category{display:block;position:absolute;top:31px;left:34px;font-size:9px;font-weight:750;letter-spacing:1px;color:#315f46;text-transform:uppercase}
+  .product-detail h1{position:absolute;top:62px;left:34px;right:34px;margin:0;font:800 31px/38px Inter,"Segoe UI",sans-serif;letter-spacing:0;color:#1d2921}
+  .product-producer{position:absolute;top:109px;left:34px;margin:0;font-size:11px;color:#778078}
+  .detail-rating{position:absolute;top:140px;left:34px;font-size:11px;font-weight:700;color:#e4b858}
+  .detail-price{position:absolute;top:195px;left:34px;margin:0;font:800 30px/37px Inter,"Segoe UI",sans-serif;color:#214b37}
+  .detail-price small{font-size:12px;color:#778078}
+  .availability{position:absolute;top:199px;right:61px;min-width:158px;height:27px;display:grid;place-items:center;gap:0;padding:0 9px;border-radius:14px;background:#e8efdf;color:#214b37;font-size:10px;font-weight:700}
+  .detail-description{position:absolute;top:257px;left:34px;right:34px;margin:0;font-size:12px;line-height:23px;color:#1d2921}
+  .detail-description span{display:block;font-size:11px;color:#778078}
+  .detail-quantity-label{position:absolute;top:332px;left:34px;font-size:11px;font-weight:700;color:#1d2921}
+  .detail-buy-row{position:absolute;top:356px;left:34px;right:36px;height:48px;display:flex;gap:13px;margin:0}
+  .detail-buy-row .quantity{width:150px;height:48px;border:1px solid #e6e8df;border-radius:11px;display:flex;align-items:center;justify-content:space-between}
+  .detail-buy-row .quantity button{width:42px;height:46px;font-size:15px}
+  .detail-buy-row .quantity span{font-size:11px;color:#214b37}
+  .detail-buy-row .button{height:48px;min-height:48px;border-radius:12px;font-size:13px}
+  .product-detail>.fine-print{position:absolute;top:444px;left:34px;margin:0;font-size:11px;line-height:27px;font-weight:700;color:#214b37}
+  .product-detail>.fine-print .desktop-copy{display:block}
+  .product-detail .detail-origin{position:absolute;top:608px;left:-677px;width:1296px;height:82px;display:block;margin:0;padding:19px 25px;border:1px solid #e6e8df;border-radius:16px;background:#f0f2e9}
+  .detail-origin>span{display:none}
+  .detail-origin b{font-size:15px;color:#214b37}
+  .detail-origin small{font-size:10px;color:#778078;margin-top:10px}
+}
+@media(max-width:650px){
+  .admin-list-page{position:relative;min-height:714px;padding:0}
+  .admin-list-page>.page-label{position:absolute;top:15px;left:22px;margin:0;font-size:13px;line-height:16px;font-weight:750}
+  .admin-list-page>.page-head{position:absolute;top:43px;left:18px;right:18px;margin:0}
+  .admin-list-page .page-head h1{margin:0;font:800 21px/27px Inter,"Segoe UI",sans-serif;color:#1d2921}
+  .admin-list-page .page-head p{margin:0;font-size:9px;color:#778078}
+  .admin-orders-page>.dashboard-grid{display:none}
+  .admin-list-filters{position:absolute;top:107px;left:14px;right:14px;display:flex;gap:8px;margin:0;overflow:hidden}
+  .admin-filter{height:27px;flex:none;padding:0 12px;border:0;border-radius:14px;background:#e8efdf;color:#214b37;font-size:10px;font-weight:700}
+  .admin-filter.active{background:#214b37;color:#fff}
+  .admin-list-page .admin-list-panel{position:absolute;top:150px;left:14px;right:14px;padding:0;border:0;background:transparent}
+  .admin-list-page .admin-list-panel>.panel-title,.admin-list-page .admin-count,.admin-list-page .admin-table-head,.admin-list-page .admin-list-note,.admin-catalog-page .catalog-notice{display:none}
+  .admin-list-rows>.fine-print{padding:20px 14px;border:1px solid #e6e8df;border-radius:16px;background:#fffefa;font-size:10px}
+  .admin-order-row,.admin-catalog-row{position:relative;width:362px;height:112px;margin:0 0 16px;padding:0;border:1px solid #e6e8df;border-radius:16px;background:#fffefa}
+  .admin-order-row>*{position:absolute}
+  .admin-order-row .order-ref{top:19px;left:13px;font-size:10px;color:#214b37}
+  .admin-order-row .status{top:11px;right:15px;width:92px;height:27px;display:grid;place-items:center;border-radius:14px;font-size:10px}
+  .admin-order-row .order-buyer{top:44px;left:13px;font-size:8px;color:#778078}
+  .admin-order-row .order-count{display:inline;top:44px;left:103px;font-size:8px;color:#778078}
+  .admin-order-row .order-amount{top:44px;right:16px;font-size:9px;color:#1d2921}
+  .admin-order-row .order-open{bottom:14px;right:16px;font-size:8px;color:#214b37}
+  .admin-order-row .order-open:before{content:"Mise à jour du statut";position:absolute;left:-280px;bottom:0;width:190px;text-align:left}
+  .admin-order-row .order-date,.admin-order-row .order-payment{display:none}
+  .admin-catalog-page>.catalog-add{position:absolute;top:56px;right:14px;width:126px;height:32px;padding:0;border-radius:12px;font-size:8px}
+  .admin-catalog-row>*{position:absolute}
+  .admin-catalog-row img{top:10px;left:9px;width:72px;height:72px;border-radius:10px;object-fit:fill}
+  .admin-catalog-row .catalog-name{top:19px;left:91px;font-size:8px;color:#1d2921}
+  .admin-catalog-row .catalog-producer{top:39px;left:91px;font-size:7px;color:#778078}
+  .admin-catalog-row .catalog-price{top:59px;left:91px;font-size:8px;color:#214b37}
+  .admin-catalog-row .catalog-stock{top:81px;left:91px;font-size:7px;color:#778078}
+  .admin-catalog-row .status{top:10px;right:14px;min-width:80px;height:24px;display:grid;place-items:center;border-radius:12px;font-size:8px}
+  .admin-catalog-row .catalog-actions{right:17px;bottom:11px;display:flex;gap:8px}.admin-catalog-row .catalog-actions .text-button{font-size:7px}
+  .auth-recovery{height:659px;min-height:659px;margin-bottom:0}
+  .auth-recovery .auth-form{position:relative;height:659px}
+  .auth-recovery .recovery-panel{position:absolute;top:63px;left:0;width:362px;height:590px;padding:0;border-radius:18px;background:#fffefa}
+  .recovery-panel .recovery-icon{position:absolute;top:28px;left:15px;width:48px;height:48px;display:grid;place-items:center;border-radius:16px;background:#e8efdf;color:#214b37;font-size:20px;font-weight:800}
+  .recovery-panel .section-kicker{display:none}
+  .recovery-panel h1{position:absolute;top:94px;left:15px;right:15px;margin:0;font:800 21px/27px Inter,"Segoe UI",sans-serif;color:#1d2921}
+  .recovery-panel>p{position:absolute;top:126px;left:15px;right:15px;margin:0;font-size:9px;line-height:17px;color:#778078}
+  .recovery-panel #reset-request-form{display:contents}
+  .recovery-panel #reset-request-form .field{position:absolute;top:181px;left:15px;right:15px;margin:0;gap:0}
+  .recovery-panel .field label{display:block;margin:0 0 6px;font-size:10px;line-height:13px}
+  .recovery-panel .field input{display:block;width:100%;height:43px;min-height:43px;margin:0;padding:0 13px;border-radius:10px;font-size:11px}
+  .recovery-panel #reset-request-form .button{position:absolute;top:273px;left:15px;width:330px;height:45px;min-height:45px;border-radius:12px;font-size:10px}
+  .recovery-panel .recovery-info{position:absolute;top:342px;left:15px;width:330px;height:74px;padding:21px 15px;background:#f0f2e9;border-radius:12px}
+  .recovery-panel .recovery-info b,.recovery-panel .recovery-info small{display:block;font-size:8px;color:#214b37}
+  .recovery-panel .recovery-info small{margin-top:14px;color:#778078}
+  .recovery-panel .auth-switch{position:absolute;top:458px;left:15px;right:15px;margin:0;font-size:9px}
+  .recovery-panel .auth-switch .text-button{font-size:9px}
+  .product-page{position:relative;padding:15px 14px 88px;min-height:714px}
+  .product-page>.page-label{height:16px;margin:0 8px 14px;font-size:13px;line-height:16px;font-weight:750}
+  .product-page>.back-link{display:none}
+  .product-detail-grid{display:grid;grid-template-columns:1fr;gap:25px}
+  .product-gallery{position:relative;width:362px}
+  .product-main-image{width:362px;height:226px;object-fit:fill;border-radius:17px}
+  .product-harvest-badge{position:absolute;top:11px;left:12px;height:27px;min-width:132px;display:grid;place-items:center;border-radius:14px;background:#fffefa;color:#214b37;font-size:10px;font-weight:700}
+  .product-thumbnails{display:none}
+  .product-detail{position:relative;width:362px;height:330px;padding:0}
+  .product-detail .product-category{display:block;position:absolute;top:0;left:4px;font-size:8px;font-weight:750;letter-spacing:.8px;color:#315f46;text-transform:uppercase}
+  .product-detail h1{position:absolute;top:19px;left:4px;right:4px;margin:0;font:800 24px/30px Inter,"Segoe UI",sans-serif;color:#1d2921}
+  .product-producer{position:absolute;top:57px;left:4px;margin:0;font-size:9px;color:#778078}
+  .detail-rating{position:absolute;top:82px;left:4px;font-size:10px;font-weight:700;color:#e4b858}
+  .detail-price{position:absolute;top:118px;left:4px;margin:0;font:800 23px/29px Inter,"Segoe UI",sans-serif;color:#214b37}
+  .detail-price small{font-size:10px;color:#778078}
+  .availability{position:absolute;top:119px;right:0;min-width:118px;height:27px;display:grid;place-items:center;padding:0 8px;border-radius:14px;background:#e8efdf;color:#214b37;font-size:10px;font-weight:700}
+  .detail-description{position:absolute;top:169px;left:4px;right:4px;margin:0;font-size:9px;line-height:17px;color:#778078}
+  .detail-description span{display:block}
+  .detail-origin,.detail-quantity-label{display:none}
+  .detail-buy-row{position:absolute;top:219px;left:4px;right:4px;height:39px;display:flex;gap:8px;margin:0}
+  .detail-buy-row .quantity{width:135px;height:39px;border:1px solid #e6e8df;border-radius:10px;display:flex;align-items:center;justify-content:space-between}
+  .detail-buy-row .quantity button{width:34px;height:37px;font-size:13px}
+  .detail-buy-row .quantity span{font-size:10px;color:#214b37}
+  .detail-buy-row .button{height:39px;min-height:39px;border-radius:12px;font-size:10px}
+  .product-detail>.fine-print{position:absolute;top:280px;left:4px;margin:0;font-size:9px;font-weight:650;color:#214b37}
+}
+@media(min-width:901px) and (max-width:1439px){
+  .admin-list-page .admin-list-panel,.admin-catalog-page .admin-list-panel,.admin-catalog-page .catalog-notice{width:100%}
+  .admin-orders-page>.dashboard-grid{right:0;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.1%}
+  .admin-orders-page .metric{width:100%}
+  .admin-order-row{grid-template-columns:13% 17% 13% 13% 16% 20% 8%}
+  .admin-orders-page .admin-table-head{grid-template-columns:13% 17% 13% 13% 16% 1fr}
+  .admin-catalog-row{grid-template-columns:6% 19% 24% 12% 12% 17% 10%}
+  .admin-catalog-page .admin-table-head{grid-template-columns:25% 24% 12% 12% 1fr}
+  .product-detail-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4%}
+  .product-gallery,.product-main-image,.product-detail{width:100%}
+  .product-detail .detail-origin{left:calc(-100% - 8%);width:calc(200% + 8%)}
+}
+@media(min-width:651px) and (max-width:900px){
+  .topbar{padding:0 3.5vw;gap:12px}
+  .desktop-nav{display:none}
+  .menu-button{display:block}
+  .header-search{width:min(29vw,210px)}
+  .top-actions{gap:6px}
+  .hero-wrap,.market-content,.content-page,.auth-wrap,.trust-strip{margin-left:3.5vw;margin-right:3.5vw}
+  .auth-wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .auth-aside,.auth-form{min-width:0}
+  .admin-list-page .admin-list-panel{width:100%;overflow-x:auto}
+  .admin-list-page .admin-list-rows{min-width:650px}
+}
+.admin-settings-page{min-height:780px}
+.admin-settings-page .page-label{font-weight:750;color:#214b37}
+.admin-settings-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.admin-settings-grid>.panel{background:#fffefa;border-radius:16px;padding:24px}
+.admin-settings-grid .panel-title{font-size:17px;margin-bottom:18px}
+#admin-account-search{width:100%;height:42px;margin-bottom:15px;padding:0 13px;border:1px solid #e6e8df;border-radius:10px;background:#fff;font-size:12px}
+#admin-account-list{max-height:530px;overflow:auto}
+.admin-account-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #e6e8df}
+.admin-account-row[hidden]{display:none}
+.admin-account-row b,.admin-account-row small{display:block}
+.admin-account-row b{font-size:12px;color:#1d2921}
+.admin-account-row small{margin-top:5px;font-size:10px;color:#778078}
+.admin-settings-page .field>small{font-size:9px;color:#778078}
+.admin-settings-page textarea{min-height:70px}
+@media(max-width:900px){.admin-settings-grid{grid-template-columns:1fr}.admin-settings-page{min-height:0}.admin-account-row{grid-template-columns:minmax(0,1fr) auto;gap:7px}.admin-account-row>.button{grid-column:2}.admin-settings-grid>.panel{padding:16px}.admin-settings-grid .panel-title{font-size:14px}}
+@media(max-width:650px){
+  .admin-order-row,.admin-catalog-row,.product-gallery,.product-main-image,.product-detail,.auth-recovery .recovery-panel,.auth-register .register-panel{width:100%}
+  .auth-recovery .recovery-panel #reset-request-form .button,.auth-recovery .recovery-panel .recovery-info{width:calc(100% - 30px)}
+}
